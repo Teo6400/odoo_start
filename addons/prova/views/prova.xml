@@ -1,0 +1,74 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+
+
+
+  
+<record model="ir.ui.view" id="prova_form">
+      <field name="name">prova.prova.form</field>
+      <field name="model">prova.prova</field>
+      <field name="arch" type="xml">
+        <tree>
+          <field name="name"/>
+        </tree>
+      </field>
+</record>
+
+
+    <!-- actions opening views on models -->
+
+<record id="prova.action_window" model="ir.actions.act_window" >
+      <field name="name">Prova</field>
+      <field name="type">ir.actions.act_window</field>
+      <field name="res_model">prova.prova</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+            <p class ="_view_nocontent_smiling_face">
+
+            </p>
+      </field>
+</record>
+
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="prova.action_server">
+      <field name="name">Prova server</field>
+      <field name="model_id" ref="model_prova_prova"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+
+<menuitem name="Prova" 
+          id="prova.menu_root"
+          action='prova.action_window'
+          sequence='10'/>
+
+    <menuitem name="matteo" 
+            id="prova.matteo_root"
+            parent='prova.menu_root'
+            action='prova.action_window'
+            sequence='10'/>
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="prova.menu_1" parent="prova.menu_root"/>
+    <menuitem name="Menu 2" id="prova.menu_2" parent="prova.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="prova.menu_1_list" parent="prova.menu_1"
+              action="prova.action_window"/>
+    <menuitem name="Server to list" id="prova" parent="prova.menu_2"
+              action="prova.action_server"/>
+-->
+
+</odoo>
