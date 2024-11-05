@@ -95,9 +95,9 @@
                         <page string="Inventory" name="inventory" groups="product.group_stock_packaging" attrs="{'invisible':[('type', '=', 'service')]}">
                             <group name="inventory">
                                 <group name="group_lots_and_weight" string="Logistics" attrs="{'invisible': [('type', 'not in', ['product', 'consu'])]}">
-                                    <label for="weight" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
-                                    <div class="o_row" name="weight" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
-                                        <field name="weight"/>
+                                    <label invisible="1" for="weight" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
+                                    <div class="o_row" invisible="1" name="weight" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
+                                        <field invisible="1" name="weight"/>
                                         <span><field name="weight_uom_name"/></span>
                                     </div>
                                     <label for="volume" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
@@ -247,15 +247,15 @@
                             </group>
                         </group>
                         <group>
-                            <group name="weight" string="Logistics" attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}">
+                            <group invisible="1" name="weight" string="Logistics" attrs="{'invisible':[('type', 'not in', ['product', 'consu'])]}">
                                 <label for="volume"/>
                                 <div class="o_row">
                                     <field name="volume"/>
                                     <span><field name="volume_uom_name"/></span>
                                 </div>
-                                <label for="weight"/>
+                                <label invisible="1" for="weight"/>
                                 <div class="o_row">
-                                    <field name="weight"/>
+                                    <field invisible="1" name="weight"/>
                                     <span><field name="weight_uom_name"/></span>
                                 </div>
                             </group>
