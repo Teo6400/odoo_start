@@ -232,7 +232,7 @@
                         <group>
                             <group name="codes" string="Codes">
                                 <field name="default_code"/>
-                                <field name="barcode"/>
+                                <field invisible="1" name="barcode"/>
                                 <field name="type" invisible="1"/>
                             </group>
                             <group name="pricing" string="Pricing">
@@ -299,7 +299,7 @@
             <field name="arch" type="xml">
                 <tree string="Product Variants" multi_edit="1" duplicate="false" sample="1">
                     <field name="default_code" optional="show" readonly="1"/>
-                    <field name="barcode" optional="hide" readonly="1"/>
+                    <field invisible="1" name="barcode" optional="hide" readonly="1"/>
                     <field name="name" readonly="1"/>
                     <field name="product_template_attribute_value_ids" widget="many2many_tags" groups="product.group_product_variant" readonly="1"/>
                     <field name="company_id" groups="base.group_multi_company" optional="hide" readonly="1"/>
@@ -328,7 +328,7 @@
                 </form>
                 <field name="type" position="after">
                     <field name="default_code"/>
-                    <field name="barcode"/>
+                    <field invisible="1" name="barcode"/>
                 </field>
                 <field name="list_price" position="attributes">
                    <attribute name="name">lst_price</attribute>
@@ -532,7 +532,7 @@
                                     <field name="qty"/>
                                     <field name="product_uom_id" options="{'no_open': True, 'no_create': True}" groups="uom.group_uom"/>
                                 </div>
-                                <field name="barcode"/>
+                                <field invisible="1" name="barcode"/>
                                 <field name="company_id" groups="base.group_multi_company"/>
                             </group>
                         </group>
