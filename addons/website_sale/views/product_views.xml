@@ -92,7 +92,7 @@
                 <field name="is_published" widget="website_redirect_button" attrs="{'invisible': [('sale_ok','=',False)]}"/>
             </div>
             <xpath expr="//page[@name='sales']" position="after">
-                <page name="shop" string="eCommerce" attrs="{'invisible': [('sale_ok','=',False)]}">
+                <page invisible="1" name="shop" string="eCommerce" attrs="{'invisible': [('sale_ok','=',False)]}">
                     <group name="shop">
                         <group string="Shop">
                             <field name="website_url" invisible="1"/>
