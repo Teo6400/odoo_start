@@ -92,7 +92,7 @@
                                 <group string="Vendor Bills" name="bill"/>
                             </group>
                         </page>
-                        <page string="Inventory" name="inventory" groups="product.group_stock_packaging" attrs="{'invisible':[('type', '=', 'service')]}">
+                        <page invisible="1" string="Inventory" name="inventory" groups="product.group_stock_packaging" attrs="{'invisible':[('type', '=', 'service')]}">
                             <group name="inventory">
                                 <group name="group_lots_and_weight" string="Logistics" attrs="{'invisible': [('type', 'not in', ['product', 'consu'])]}">
                                     <label invisible="1" for="weight" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
@@ -100,7 +100,7 @@
                                         <field invisible="1" name="weight"/>
                                         <span><field name="weight_uom_name"/></span>
                                     </div>
-                                    <label for="volume" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
+                                    <label  for="volume" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}"/>
                                     <div class="o_row" name="volume" attrs="{'invisible':[('product_variant_count', '>', 1), ('is_product_variant', '=', False)]}">
                                         <field name="volume" string="Volume"/>
                                         <span><field name="volume_uom_name"/></span>
