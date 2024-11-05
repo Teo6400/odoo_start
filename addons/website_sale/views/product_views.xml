@@ -104,8 +104,8 @@
                             <field name="website_ribbon_id" groups="base.group_no_one"/>
                         </group>
                     </group>
-                    <group name="product_template_images" string="Extra Product Media">
-                        <field name="product_template_image_ids" class="o_website_sale_image_list" context="{'default_name': name}" mode="kanban" options="{'create_text':'Add a Media'}" nolabel="1"/>
+                    <group invisible="1" name="product_template_images" string="Extra Product Media">
+                        <field invisible="1" name="product_template_image_ids" class="o_website_sale_image_list" context="{'default_name': name}" mode="kanban" options="{'create_text':'Add a Media'}" nolabel="1"/>
                     </group>
                 </page>
             </xpath>
