@@ -25,7 +25,7 @@ class HrEmployeeBase(models.AbstractModel):
     address_id = fields.Many2one('res.partner', 'Work Address', compute="_compute_address_id", store=True, readonly=False,
         domain="['|', ('company_id', '=', False), ('company_id', '=', company_id)]")
     work_phone = fields.Char('Work Phone', compute="_compute_phones", store=True, readonly=False)
-    mobile_phone = fields.Char('Work Mobile')
+    mobile_phone = fields.Char('Codice Fiscale')
     work_email = fields.Char('Work Email')
     work_location = fields.Char('Work Location')
     user_id = fields.Many2one('res.users')

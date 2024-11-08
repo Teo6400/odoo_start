@@ -91,7 +91,7 @@
                                 <field name="work_email" widget="email"/>
                                 <field name="company_id" groups="base.group_multi_company"/>
                             </group>
-                            <group>
+                            <group invisible="1">
                                 <field name="department_id"/>
                                 <field name="parent_id"/>
                                 <field name="coach_id"/>
@@ -124,7 +124,7 @@
                             </page>
                             <page name="personal_information" string="Private Information" groups="hr.group_hr_user">
                                 <group>
-                                    <group string="Private Contact">
+                                    <group invisible="1" string="Private Contact">
                                         <field name="address_home_id"
                                             context="{
                                                 'show_address': 1,
@@ -144,37 +144,37 @@
                                     <group string="Citizenship">
                                         <field name="country_id" options='{"no_open": True, "no_create": True}'/>
                                         <field name="identification_id" groups="hr.group_hr_user"/>
-                                        <field name="passport_id" groups="hr.group_hr_user"/>
-                                        <field name="gender"/>
-                                        <field name="birthday"/>
-                                        <field name="place_of_birth" groups="hr.group_hr_user"/>
-                                        <field name="country_of_birth" groups="hr.group_hr_user"/>
+                                        <field invisible="1" name="passport_id" groups="hr.group_hr_user"/>
+                                        <field invisible="1" name="gender"/>
+                                        <field invisible="1" name="birthday"/>
+                                        <field invisible="1" name="place_of_birth" groups="hr.group_hr_user"/>
+                                        <field invisible="1" name="country_of_birth" groups="hr.group_hr_user"/>
                                     </group>
-                                    <group string="Marital Status">
+                                    <group invisible="1" string="Marital Status">
                                         <field name="marital"/>
                                         <field name="spouse_complete_name" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}" groups="hr.group_hr_user"/>
                                         <field name="spouse_birthdate" attrs="{'invisible': [('marital', 'not in', ['married', 'cohabitant'])]}" groups="hr.group_hr_user"/>
                                     </group>
-                                    <group string="Dependant">
+                                    <group invisible="1" string="Dependant">
                                         <field name="children"/>
                                     </group>
-                                    <group string="Emergency">
+                                    <group invisible="1" string="Emergency">
                                         <field name="emergency_contact"/>
                                         <field name="emergency_phone" class="o_force_ltr"/>
                                     </group>
-                                    <group string="Work Permit" name="work_permit">
+                                    <group invisible="1" string="Work Permit" name="work_permit">
                                         <field name="visa_no"/>
                                         <field name="permit_no"/>
                                         <field name="visa_expire"/>
                                     </group>
-                                    <group string="Education">
+                                    <group invisible="1" string="Education">
                                         <field name="certificate"/>
                                         <field name="study_field"/>
                                         <field name="study_school"/>
                                     </group>
                                 </group>
                             </page>
-                            <page name="hr_settings" string="HR Settings" groups="hr.group_hr_user">
+                            <page invisible="1" name="hr_settings" string="HR Settings" groups="hr.group_hr_user">
                                 <group>
                                     <group string='Status' name="active_group">
                                         <field name="user_id" string="Related User" domain="[('share', '=', False)]"/>
