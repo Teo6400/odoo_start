@@ -7,8 +7,8 @@
         <field name="arch" type="xml">
             <div id="o_work_employee_main" position="after">
                 <div id="o_employee_right">
-                    <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
-                    <field name="child_ids" widget="hr_org_chart"/>
+                    <h4 invisible="1" class="o_org_chart_title mb16 mt0">Organization Chart</h4>
+                    <field invisible="1" name="child_ids" widget="hr_org_chart"/>
                 </div>
             </div>
         </field>
@@ -21,8 +21,8 @@
         <field name="arch" type="xml">
             <xpath expr="//div[@id='o_work_employee_main']" position="after">
                 <div id="o_employee_right">
-                    <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
-                    <field name="child_ids" widget="hr_org_chart"/>
+                    <h4 invisible="1" class="o_org_chart_title mb16 mt0">Organization Chart</h4>
+                    <field invisible="1" name="child_ids" widget="hr_org_chart"/>
                 </div>
             </xpath>
         </field>
@@ -36,8 +36,8 @@
             <div id="o_work_employee_main" position="after">
                 <div id="o_employee_right">
                     <field name="employee_ids" invisible="1"/>
-                    <h4 class="o_org_chart_title mb16 mt0">Organization Chart</h4>
-                    <field name="child_ids" widget="hr_org_chart"/>
+                    <h4 invisible="1" class="o_org_chart_title mb16 mt0">Organization Chart</h4>
+                    <field invisible="1" name="child_ids" widget="hr_org_chart"/>
                 </div>
             </div>
         </field>

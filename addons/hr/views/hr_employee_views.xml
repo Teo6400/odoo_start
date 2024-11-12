@@ -86,7 +86,7 @@
                         </div>
                         <group>
                             <group>
-                                <field name="mobile_phone" widget="phone"/>
+                                <field invisible="1" name="mobile_phone" widget="phone"/>
                                 <field name="work_phone" widget="phone"/>
                                 <field name="work_email" widget="email"/>
                                 <field name="company_id" groups="base.group_multi_company"/>
@@ -105,9 +105,9 @@
                                             <field name="address_id"
                                                 context="{'show_address': 1}"
                                                 options='{"always_reload": True, "highlight_first_line": True}'/>
-                                            <field name="work_location"/>
+                                            <field invisible="1" name="work_location"/>
                                         </group>
-                                        <group name="managers" string="Approvers" class="hide-group-if-empty">
+                                        <group invisible="1" name="managers" string="Approvers" class="hide-group-if-empty">
                                             <!-- is overridden in other hr related modules -->
                                         </group>
                                         <group name="departure" string="Departure" attrs="{'invisible': [('active', '=', True)]}">
@@ -117,7 +117,7 @@
                                         </group>
                                         <group string="Schedule">
                                             <field name="resource_calendar_id" required="1"/>
-                                            <field name="tz"/>
+                                            <field invisible="1" name="tz"/>
                                         </group>
                                     </div>
                                 </div>
@@ -143,7 +143,8 @@
                                     </group>
                                     <group string="Citizenship">
                                         <field name="country_id" options='{"no_open": True, "no_create": True}'/>
-                                        <field name="identification_id" groups="hr.group_hr_user"/>
+                                        <field invisible="1" name="identification_id" groups="hr.group_hr_user"/>
+                                        <field name="fiscal_code" groups="hr.group_hr_user"/>
                                         <field invisible="1" name="passport_id" groups="hr.group_hr_user"/>
                                         <field invisible="1" name="gender"/>
                                         <field invisible="1" name="birthday"/>
