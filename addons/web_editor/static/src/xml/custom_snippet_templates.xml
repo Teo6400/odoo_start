@@ -1,0 +1,7 @@
+<templates id="custom_snippet_templates" xml:space="preserve">
+  <t t-name="web_editor.snippets.upload_button">
+    <div class="oe_snippet">
+      <button type="button" class="btn btn-primary o_upload_image_button">Upload Image</button>
+    </div>
+  </t>
+</templates>
