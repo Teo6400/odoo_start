@@ -254,7 +254,7 @@
                                     </group>
                                 </group>
                             </page>
-                            <page name="lead" string="Extra Information" attrs="{'invisible': [('type', '=', 'lead')]}">
+                            <page invisible="1" name="lead" string="Extra Information" attrs="{'invisible': [('type', '=', 'lead')]}">
                                 <group>
                                     <group string="Contact Information">
                                         <field name="partner_name"/>
