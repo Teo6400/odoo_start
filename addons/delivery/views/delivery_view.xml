@@ -128,7 +128,7 @@
                                     <field name="price_rule_ids" nolabel="1"/>
                                 </group>
                             </page>
-                            <page string="Destination Availability" name="destination">
+                            <page invisible="1" string="Destination Availability" name="destination">
                                 <group>
                                     <p>
                                         Filling this form allows you to filter delivery carriers according to the delivery address of your customer.
