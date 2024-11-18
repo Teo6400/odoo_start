@@ -76,7 +76,7 @@
                                     <field name="product_variant_id" invisible="1"/>
                                 </group>
                             </group>
-                            <group string="Internal Notes">
+                            <group invisible="1" string="Internal Notes">
                                 <field name="description" nolabel="1" placeholder="This note is only for internal purposes."/>
                             </group>
                         </page>
