@@ -1,0 +1,13 @@
+<odoo>
+    <template id="product_image_upload_widget" inherit_id="website_sale.product">
+        <xpath expr="//div[@id='product_details']" position="inside">
+            <t t-if="product.allow_image_upload">
+                <div id="image_upload_widget">
+                    <label for="custom_image">Carica la tua immagine:</label>
+                    <input type="file" id="custom_image" />
+                    <button type="button" id="upload_button">Carica</button>
+                </div>
+            </t>
+        </xpath>
+    </template>
+</odoo>
