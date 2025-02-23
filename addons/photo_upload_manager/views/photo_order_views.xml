@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Vista Form per photo.order -->
+    <record id="view_photo_order_form" model="ir.ui.view">
+        <field name="name">photo.order.form</field>
+        <field name="model">photo.order</field>
+        <field name="arch" type="xml">
+            <form string="Ordine Foto">
+                <sheet>
+                    <group>
+                        <field name="order_id"/>
+                        <field name="image" widget="image"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Vista Tree per photo.order -->
+    <record id="view_photo_order_tree" model="ir.ui.view">
+        <field name="name">photo.order.tree</field>
+        <field name="model">photo.order</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="order_id"/>
+                <field name="image"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Menu principale sotto Vendite (sale.sale_order_menu) -->
+    <menuitem id="menu_photo_order" name="Ordini Foto" parent="sale.sale_order_menu" sequence="10"/>
+
+    <!-- Azione per aprire i record di photo.order -->
+    <record id="action_photo_order" model="ir.actions.act_window">
+        <field name="name">Ordini Foto</field>
+        <field name="res_model">photo.order</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- Sottomenu per aprire la action -->
+    <menuitem id="submenu_photo_order" name="Immagini Ordini"
+              parent="menu_photo_order" action="action_photo_order"/>
+</odoo>
