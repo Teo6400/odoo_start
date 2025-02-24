@@ -4,16 +4,15 @@
     <template id="product_image_upload" inherit_id="website_sale.product" name="Aggiunta form upload immagine">
         <xpath expr="//div[@id='product_details']" position="inside">
             <form action="/upload/photo" method="post" enctype="multipart/form-data">
-                <!-- Campo nascosto con l'ID del carrello (se non esiste, lo crea) -->
-                <input type="hidden" name="order_id"
-                       t-att-value="request.website.sale_get_order(force_create=True).id" />
-
+                <!-- Campo nascosto con l'ID dell'ordine -->
+                <input type="hidden" name="order_id" t-att-value="request.website.sale_get_order(force_create=True).id"/>
+                <!-- Campo nascosto con l'ID del prodotto -->
+                <input type="hidden" name="product_id" t-att-value="product.id"/>
                 <div class="form-group mt-2">
                     <label>Carica la tua immagine personalizzata:</label>
                     <input type="file" name="image" accept="image/*" class="form-control"/>
                 </div>
-
-                <button type="submit" class="btn btn-primary mt-2">Invia Immagine</button>
+                <button type="submit" class="btn btn-primary mt-2">Aggiungi al carrello con immagine</button>
             </form>
         </xpath>
     </template>
