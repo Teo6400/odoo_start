@@ -28,17 +28,39 @@
         </field>
     </record>
 
-    <!-- Menu principale sotto Vendite (sale.sale_order_menu) -->
-    <menuitem id="menu_photo_order" name="Ordini Foto" parent="sale.sale_order_menu" sequence="10"/>
-
-    <!-- Azione per aprire i record di photo.order -->
+    <!-- Azione per "Immagini non confermate" -->
     <record id="action_photo_order" model="ir.actions.act_window">
-        <field name="name">Ordini Foto</field>
+        <field name="name">Immagini non confermate</field>
         <field name="res_model">photo.order</field>
         <field name="view_mode">tree,form</field>
     </record>
 
-    <!-- Sottomenu per aprire la action -->
-    <menuitem id="submenu_photo_order" name="Immagini Ordini"
-              parent="menu_photo_order" action="action_photo_order"/>
+    <!-- Azione per "Immagini confermate": nessun record verrà mostrato -->
+    <record id="action_photo_order_confirmed" model="ir.actions.act_window">
+        <field name="name">Immagini confermate</field>
+        <field name="res_model">photo.order</field>
+        <field name="view_mode">tree,form</field>
+        <!-- Dominio che non restituisce alcun record -->
+        <field name="domain">[('id', '=', False)]</field>
+    </record>
+
+    <!-- Nuovo menu "Immagini" (figlio del menu vendite) -->
+    <menuitem id="menu_photo_images"
+              name="Immagini"
+              parent="sale.sale_menu_root"
+              sequence="30" />
+
+    <!-- Sottomenu per "Immagini non confermate" -->
+    <menuitem id="submenu_photo_order"
+              name="Immagini non confermate"
+              parent="menu_photo_images"
+              action="action_photo_order"
+              sequence="10" />
+
+    <!-- Sottomenu per "Immagini confermate" -->
+    <menuitem id="submenu_photo_order_confirmed"
+              name="Immagini confermate"
+              parent="menu_photo_images"
+              action="action_photo_order_confirmed"
+              sequence="20" />
 </odoo>
