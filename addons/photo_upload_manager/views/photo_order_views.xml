@@ -10,6 +10,7 @@
                     <group>
                         <field name="order_id"/>
                         <field name="image" widget="image"/>
+                        <field name="confirmed"/>
                     </group>
                 </sheet>
             </form>
@@ -24,37 +25,38 @@
             <tree>
                 <field name="order_id"/>
                 <field name="image"/>
+                <field name="confirmed"/>
             </tree>
         </field>
     </record>
 
-    <!-- Azione per "Immagini non confermate" -->
-    <record id="action_photo_order" model="ir.actions.act_window">
+    <!-- Azione per "Immagini non confermate": mostra solo record non confermati -->
+    <record id="action_photo_order_unconfirmed" model="ir.actions.act_window">
         <field name="name">Immagini non confermate</field>
         <field name="res_model">photo.order</field>
         <field name="view_mode">tree,form</field>
+        <field name="domain">[('confirmed','=',False)]</field>
     </record>
 
-    <!-- Azione per "Immagini confermate": nessun record verrà mostrato -->
+    <!-- Azione per "Immagini confermate": mostra solo record confermati -->
     <record id="action_photo_order_confirmed" model="ir.actions.act_window">
         <field name="name">Immagini confermate</field>
         <field name="res_model">photo.order</field>
         <field name="view_mode">tree,form</field>
-        <!-- Dominio che non restituisce alcun record -->
-        <field name="domain">[('id', '=', False)]</field>
+        <field name="domain">[('confirmed','=',True)]</field>
     </record>
 
-    <!-- Nuovo menu "Immagini" (figlio del menu vendite) -->
+    <!-- Nuovo menu "Immagini" (figlio di sale.sale_menu_root) -->
     <menuitem id="menu_photo_images"
               name="Immagini"
               parent="sale.sale_menu_root"
               sequence="30" />
 
     <!-- Sottomenu per "Immagini non confermate" -->
-    <menuitem id="submenu_photo_order"
+    <menuitem id="submenu_photo_order_unconfirmed"
               name="Immagini non confermate"
               parent="menu_photo_images"
-              action="action_photo_order"
+              action="action_photo_order_unconfirmed"
               sequence="10" />
 
     <!-- Sottomenu per "Immagini confermate" -->

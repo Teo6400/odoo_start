@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="automated_action_confirm_photos" model="base.automation">
+        <field name="name">Conferma Immagini dell'Ordine (by order_id)</field>
+        <field name="model_id" ref="sale.model_sale_order"/>
+        <!-- Scatta su scrittura (on_write) -->
+        <field name="trigger">on_write</field>
+        <!-- Attiva l'azione solo quando lo stato dell'ordine diventa 'sale' -->
+        <field name="filter_pre_domain">[('state', '=', 'sale')]</field>
+        <field name="state">code</field>
+        <field name="code">
+            <![CDATA[
+for order in records:
+    # Cerca le foto non confermate associate a questo ordine
+    photo_orders = env['photo.order'].search([
+        ('order_id', '=', order.id),
+        ('confirmed', '=', False)
+    ])
+    if photo_orders:
+        photo_orders.write({'confirmed': True})
+            ]]>
+        </field>
+    </record>
+</odoo>
