@@ -9,6 +9,7 @@
                 <sheet>
                     <group>
                         <field name="order_id"/>
+                        <field name="product_id"/>
                         <field name="image" widget="image"/>
                         <field name="confirmed"/>
                     </group>
@@ -24,6 +25,7 @@
         <field name="arch" type="xml">
             <tree>
                 <field name="order_id"/>
+                <field name="product_id"/>
                 <field name="image"/>
                 <field name="confirmed"/>
             </tree>
@@ -46,7 +48,7 @@
         <field name="domain">[('confirmed','=',True)]</field>
     </record>
 
-    <!-- Nuovo menu "Immagini" (figlio di sale.sale_menu_root) -->
+    <!-- Menu "Immagini" (figlio del menu Vendite) -->
     <menuitem id="menu_photo_images"
               name="Immagini"
               parent="sale.sale_menu_root"

@@ -8,3 +8,4 @@ class PhotoOrder(models.Model):
     order_id = fields.Many2one('sale.order', string="Ordine di Vendita", required=True, ondelete='cascade')
     image = fields.Binary(string="Immagine", required=True)
     confirmed = fields.Boolean(string="Confermata", default=False)
+    product_id = fields.Many2one('product.product', string="Prodotto")  # <-- Nuovo campo
